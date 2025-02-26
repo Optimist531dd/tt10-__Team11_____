@@ -15,12 +15,6 @@ module tt_um_Team11 (
     input  wire       clk,      // clock
     input  wire       rst_n     // reset_n - low to reset
 );
-wire [7:0] sum;  
-adder_8bit my_adder (
-    .A(ui_in),
-    .B(uio_in),
-    .C(sum)
-);
 
   // All output pins must be assigned. If not used, assign to 0.
   assign uo_out  = ui_in + uio_in;  // Example: ou_out is the sum of ui_in and uio_in
@@ -32,10 +26,3 @@ adder_8bit my_adder (
 
 endmodule
 
-module adder_8bit (
-    input  wire [7:0] A,  
-    input  wire [7:0] B,  
-    output wire [7:0] C
-);
-    assign C = A + B;
-endmodule
